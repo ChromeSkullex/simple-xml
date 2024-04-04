@@ -25,7 +25,6 @@
 //! // Save to file
 //! player.save_to_file("./player.xml");
 //! ```
-//!
 //! ## Editing xml structures
 //! ```
 //!let file =     
