@@ -73,8 +73,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "simple-xml"
-version = "0.1.10"
+name = "szl-simple-xml"
+version = "0.1.0"
 dependencies = [
  "rand",
 ]
