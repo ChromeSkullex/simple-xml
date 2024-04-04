@@ -1,3 +1,6 @@
+## Note
+Hello! This was a project made by [Freja Roberts](https://crates.io/users/ten3roberts) and want to first give credit for them. I'm still slowly updating this project because it's super intuitive but just needs updating. 
+
 # Simple XML
 Simple xml is a small crate for reading, parsing and storing xml data
 
