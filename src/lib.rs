@@ -25,7 +25,23 @@
 //! // Save to file
 //! player.save_to_file("./player.xml");
 //! ```
+//!
+//! ## Editing xml structures
+//! ```
+//!let file =     
+//!    szl_simple_xml::from_file("./examples/note.xml").expect("Failed to parse simple_xml");
+//!    let mut resources = 
+//!        &mut file.get_mut_nodes("resources").unwrap()[0].get_mut_nodes("resource").unwrap()[0];
+//!    
+//!    let href = String::from("page1.html");
+//!    let new_file_node = szl_simple_xml::new("file", String::new());
+//!    new_file_node.add_attribute("href", &href);
+//!
+//!    resources.add_node(new_file_node);
+//!    let write_file = file.save_to_file_pretty("./test.xml")
+//! ```
 //! For more example, see the tests
+
 
 use std::collections::HashMap;
 use std::fs::File;
@@ -257,7 +273,8 @@ fn load_from_slice(string: &str) -> Result<Payload, Error> {
 
 impl Node {
 
-    // Returns a mutable list of nodes 
+    /// Returns a mutable list of nodes 
+    /// If no nodes with the specified tag exists, None is returned
     pub fn get_mut_nodes(&mut self, tag: &str) -> Option<&mut Vec<Node>> {
         self.nodes.get_mut(tag)
     }
