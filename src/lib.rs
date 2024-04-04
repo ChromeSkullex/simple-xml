@@ -256,6 +256,12 @@ fn load_from_slice(string: &str) -> Result<Payload, Error> {
 }
 
 impl Node {
+
+    // Returns a mutable list of nodes 
+    pub fn get_mut_nodes(&self, tag: &str) -> Option<&mut Node> {
+        self.nodes.get_mut(tag)
+    }
+
     /// Returns a list of all nodes with the specified tag
     /// If no nodes with the specified tag exists, None is returned
     pub fn get_nodes(&self, tag: &str) -> Option<&Vec<Node>> {
